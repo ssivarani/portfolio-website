@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suthika R S - Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
+    header, section, footer { padding: 40px 20px; text-align: center; }
+    header { background: #0056b3; color: #fff; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    header h1 { font-size: 3rem; margin-bottom: 20px; }
+    header p { font-size: 1.2rem; margin-bottom: 30px; }
+    .cta-button { padding: 12px 25px; background: #fff; color: #0056b3; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    nav { background: #333; padding: 10px; display: none; }
+    nav a { color: white; padding: 10px; text-decoration: none; }
+    nav a:hover { background: #444; }
+    section { display: none; }
+    footer { background: #333; color: #fff; }
+  </style>
+</head>
+<body>
+
+  <!-- Home Page -->
+  <header id="home">
+    <h1>Welcome to My Portfolio</h1>
+    <p>Hi, I'm <b>Suthika R S</b>. Click below to explore my work.</p>
+    <a href="#" onclick="openPortfolio()" class="cta-button">Open Portfolio</a>
+  </header>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <a href="#home" onclick="showSection('home')">Home</a>
+    <a href="#about" onclick="showSection('about')">About</a>
+    <a href="#projects" onclick="showSection('projects')">Projects</a>
+    <a href="#contact" onclick="showSection('contact')">Contact</a>
+  </nav>
+
+  <!-- About Page -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate web developer interested in creating simple and user-friendly websites.</p>
+  </section>
+
+  <!-- Projects Page -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <h3>Project 1</h3>
+    <p>Online Portfolio – A personal project showcasing my web skills.</p>
+    <h3>Project 2</h3>
+    <p>Student Management System – A basic CRUD web application.</p>
+  </section>
+
+  <!-- Contact Page -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:suthika@gmail.com">suthika@gmail.com</a></p>
+    <p>Phone: +91 9876543210</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Suthika R S. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openPortfolio() {
+      document.getElementById('navbar').style.display = 'block';
+      showSection('about');
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); // ✅ Scrolls to bottom
+    }
+
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
